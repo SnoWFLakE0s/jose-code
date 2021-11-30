@@ -1,6 +1,10 @@
 # jose-code
 A simple extension of the C language for doing basic tasks. Funny function names and operators based on quotes from our MA111 professor. Completely impractical.
 
+# Language Structure
+Files are saved to `.josecode` files. Code should be individual line-by-line statements, and the compiler will go through one line at a time.
+The only data type in this language are floating-point numbers. This simplifies calculations a little.
+
 # Features
 * Functions:
   *  Logarithm: `loggers(x,a)`
