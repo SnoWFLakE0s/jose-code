@@ -1,0 +1,4 @@
+get input text (probably a txt file basically)
+scan over it for key phrases and symbols
+mark everything into logical blocks
+pass this into parser

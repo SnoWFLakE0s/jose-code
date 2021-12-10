@@ -1,0 +1,3 @@
+get logical structures from lexer
+interpret it and turn it into C-readable format
+use gcc complier and turn into .exe
