@@ -11,7 +11,7 @@ int main(void){
     FILE *fp; //file pointer to input file
     fp = fopen("input.josecode","r"); //opens input.josecode to be read
     FILE *op; //file pointer to output text file
-    op = fopen("output.txt", "w+"); //opens output.txt to be read and wrote to
+    op = fopen("output.txt", "w"); //opens output.txt to be wrote to
 
     if(fp == NULL) { //makes sure the file can be read
         perror("Error opening input file");
@@ -35,11 +35,11 @@ int main(void){
             }
         }
     }
-//    fclose(op); 
+    fclose(op); 
 
-//    op = fopen("output.text","r"); //opens input.josecode to be read
     FILE *cp; //file pointer to output c file
     cp = fopen("output.c","w"); //opens the output.c file for writing 
+    op = fopen("output.txt", "r"); //opens output.txt to be read
     if(op == NULL) { //makes sure the file can be read
         perror("Error opening output file");
         return(-1);
@@ -74,12 +74,13 @@ int main(void){
     char *line = NULL;
     size_t len = 0;
 
-    printf("%s\n", getline(&line, &len, op));
-    printf("%s\n", boat);
-    
+    /*getline(&line, &len, op);
+    printf("the getline value is : %d\n", getline(&line, &len, op));
+
+    printf("This is the line :%s\n", line); 
+    printf("this is the boat:%s\n", boat);
+    */ 
     while(getline(&line, &len, op) != -1) {
-        printf("%s\n", line);
-        printf("%s\n", boat);
         if((strcmp(line , boat)) == 0) {
             printf("success!");
         }
