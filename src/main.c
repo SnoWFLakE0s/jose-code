@@ -45,42 +45,17 @@ int main(void){
         return(-1);
     }
 
-
-    char boat[] = "each";
+    char boat[] = " int \n";
     char boat2[] = "boat";
-
-
-    /*
-    while (!feof(op)) { //reads the file to check there's no EOF
-        if( fgets (input, 80, op)!=NULL ) {
-            int c;
-            const char *s = " "; //token key is a whitespace
-            char *token;
-
-            token = strtok(input, s); //strtok function
-            //walk through other tokens 
-            while( token != NULL ) {
-                if((strcmp((fgets (input, 80, op)),boat)) == 0) {
-//                    fprintf(cp," %s\n", boat2);
-                      printf("success!");
-                    } 
-                token = strtok(NULL, s);
-            }
-        }
-    }
-     
-*/
+    printf("this is the boat:%s, the length is %d\n", boat, strlen(boat));
 
     char *line = NULL;
     size_t len = 0;
 
-    /*getline(&line, &len, op);
-    printf("the getline value is : %d\n", getline(&line, &len, op));
-
-    printf("This is the line :%s\n", line); 
-    printf("this is the boat:%s\n", boat);
-    */ 
+    int line_num = 1;
     while(getline(&line, &len, op) != -1) {
+        printf("line:%d,strcmp value:%d,str:%s,strlen:%d\n",line_num, strcmp(line , boat),line, strlen(line));
+        line_num++;
         if((strcmp(line , boat)) == 0) {
             printf("success!");
         }
