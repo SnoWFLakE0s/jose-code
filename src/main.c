@@ -6,6 +6,7 @@
 int main(void){
     printf("Welcome to %s!\n",APP_NAME);
 
+    //need to add function to wipe any output.c s
     //need to add custom file name support
 
     FILE *fp; //file pointer to input file
@@ -45,19 +46,27 @@ int main(void){
         return(-1);
     }
 
-    char boat[] = "int\n";
-    printf("this is the boat:%s, the length is %d\n", boat, strlen(boat));
-
     char *line = NULL;
     size_t len = 0;
 
     int line_num = 1;
     while(getline(&line, &len, op) != -1) {
         line_num++;
+        /*
         if((strcmp(boat , line)) == 0) {
             printf("success at line %d!\n", line_num);
             printf("line:%d,strcmp value:%d,str:%s,strlen:%d\n",line_num, strcmp(line , boat),line, strlen(line));
         }
+        */
+        /*giga switch statement
+         if strcmp == 0
+            fprintf(cp, "%s\n", designated array);
+         */
+        if(strcmp(loggers, line) == 0) {
+            fprintf(cp, "%s\n", swaploggers);        
+        } else {
+            fprintf(cp, "%s", line);
+        } 
     }
     fclose(op);
     fclose(fp);

@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 /*
  * Global Variable declarations, if needed.
  */
@@ -29,5 +30,24 @@
 /*
  * Function declarations, if needed.
  */
-
+char loggers[] = "loggers(\n";
+char swaploggers[] = "log(";
+char power[] = "power(\n";
+char swappower[] = "pow(";
+char dontcare[] = "dontCareAboutValue(\n";
+char swapdontcare[] = "round(";
 #endif /* MAIN_H */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
