@@ -50,6 +50,7 @@ int main(void){
     char boat2[] = "boat";
 
 
+    /*
     while (!feof(op)) { //reads the file to check there's no EOF
         if( fgets (input, 80, op)!=NULL ) {
             int c;
@@ -57,16 +58,36 @@ int main(void){
             char *token;
 
             token = strtok(input, s); //strtok function
-
-            /* walk through other tokens */
+            //walk through other tokens 
             while( token != NULL ) {
-                if(strcmp(input,boat)) {
-                    fprintf(cp," %s\n", boat2);
+                if((strcmp((fgets (input, 80, op)),boat)) == 0) {
+//                    fprintf(cp," %s\n", boat2);
+                      printf("success!");
                     } 
                 token = strtok(NULL, s);
             }
         }
     }
-    fclose(op); 
+     
+*/
+
+    char *line = NULL;
+    size_t len = 0;
+
+    printf("%s\n", getline(&line, &len, op));
+    printf("%s\n", boat);
+    
+    while(getline(&line, &len, op) != -1) {
+        printf("%s\n", line);
+        printf("%s\n", boat);
+        if((strcmp(line , boat)) == 0) {
+            printf("success!");
+        }
+    }
+    fclose(op);
+    fclose(fp);
+    fclose(cp);
+    free(line);
+
     return(SUCCESS);
 }
