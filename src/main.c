@@ -6,6 +6,14 @@
 int main(void){
     printf("Welcome to %s!\n",APP_NAME);
 
+
+    FILE *op;
+    op = fopen("Output.txt", "w");
+
+
+
+    //need to add custom file name support
+
     FILE *fp; //file pointer
     char input[80]; //input array 80 chars long
 
@@ -25,11 +33,13 @@ int main(void){
 
             /* walk through other tokens */
             while( token != NULL ) {
-                printf( " %s\n", token );
+//                printf( " %s\n", token );
+                fprintf(op," %s\n", token);
 
                 token = strtok(NULL, s);
             }
         }
     }
+    fclose(op); 
     return(SUCCESS);
 }
