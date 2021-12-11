@@ -29,7 +29,7 @@ int main(void){
 
             /* walk through other tokens */
             while( token != NULL ) {
-                fprintf(op," %s\n", token);
+                fprintf(op,"%s\n", token);
 
                 token = strtok(NULL, s);
             }
@@ -45,8 +45,7 @@ int main(void){
         return(-1);
     }
 
-    char boat[] = " int \n";
-    char boat2[] = "boat";
+    char boat[] = "int\n";
     printf("this is the boat:%s, the length is %d\n", boat, strlen(boat));
 
     char *line = NULL;
@@ -54,10 +53,10 @@ int main(void){
 
     int line_num = 1;
     while(getline(&line, &len, op) != -1) {
-        printf("line:%d,strcmp value:%d,str:%s,strlen:%d\n",line_num, strcmp(line , boat),line, strlen(line));
         line_num++;
-        if((strcmp(line , boat)) == 0) {
-            printf("success!");
+        if((strcmp(boat , line)) == 0) {
+            printf("success at line %d!\n", line_num);
+            printf("line:%d,strcmp value:%d,str:%s,strlen:%d\n",line_num, strcmp(line , boat),line, strlen(line));
         }
     }
     fclose(op);
