@@ -86,11 +86,6 @@ int main(void){
     while(*i != "") {
         fprintf(cp, "%s\n", *i++);
     }
-    /*
-    for(int i = 0; i < 4; i++) {
-        fprintf(cp, "%s", output_start[i]);
-    }
-    */
 
     char *line = NULL;
     size_t len = 0;
