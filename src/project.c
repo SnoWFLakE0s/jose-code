@@ -6,6 +6,14 @@
 /*
  * Global Variable definitions, if needed.
  */
+char *josecode[] = {
+    "",
+};
+
+char *native[] = {
+    "log (",
+    "",
+};
 
 /*
  * Data Structure definitions, if needed.

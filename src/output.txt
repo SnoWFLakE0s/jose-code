@@ -1,4 +1,25 @@
+double
+value;
+
+double
+result;
+
+value
+=
+1.5;
+
+result
+=
 loggers(
-5
-);
+value);
+
+printf("The
+Natural
+Logarithm
+of
+%f
+is
+%f\n",
+value,
+result);
 

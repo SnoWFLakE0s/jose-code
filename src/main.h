@@ -36,6 +36,8 @@ char power[] = "power(\n";
 char swappower[] = "pow(";
 char dontcare[] = "dontCareAboutValue(\n";
 char swapdontcare[] = "round(";
+extern char *josecode[];
+extern char *native[];
 #endif /* MAIN_H */
 
 
