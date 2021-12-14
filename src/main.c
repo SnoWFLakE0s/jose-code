@@ -13,13 +13,13 @@ int main(void){
     //need to add custom file name support
 
     FILE *fp; //file pointer to input file
-    fp = fopen("input.josecode","r"); //opens input.josecode to be read
+    fp = fopen("../output/input.josecode","r"); //opens input.josecode to be read
     if(fp == NULL) { //makes sure the file can be read
         perror("Error opening input file");
         return(-1);
     }
     FILE *op; //file pointer to output text file
-    op = fopen("output.txt", "w"); //opens output.txt to be wrote to
+    op = fopen("../output/output.txt", "w"); //opens output.txt to be wrote to
     if(op == NULL) { //makes sure the file can be read
         perror("Error opening output text file");
         return(-1);
@@ -44,20 +44,19 @@ int main(void){
     fclose(op); 
 
     FILE *cp; //file pointer to output c file
-    cp = fopen("output.c","w"); //opens the output.c file for writing 
+    cp = fopen("../output/output.c","w"); //opens the output.c file for writing 
     if(cp == NULL) { //makes sure the file can be read
         perror("Error opening output c file");
         return(-1);
     }
-    op = fopen("output.txt", "r"); //opens output.txt to be read
+    op = fopen("../output/output.txt", "r"); //opens output.txt to be read
     if(op == NULL) { //makes sure the file can be read
         perror("Error opening output text file");
         return(-1);
     }
 
     char *output_start[] = {
-        "#include <stdio.h>",
-        "#include <math.h>",
+        "#include \"josecode.h\"",
         "\n",
         "int main(void) {",
         ""
@@ -115,6 +114,8 @@ int main(void){
     fclose(fp);
     fclose(cp);
     free(line);
-
+    printf("Finished Compiling josecode\n");
+    
+    system("cd ../output && make run");
     return(SUCCESS);
 }
