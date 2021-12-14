@@ -30,14 +30,14 @@
 /*
  * Function declarations, if needed.
  */
-char loggers[] = "loggers(\n";
-char swaploggers[] = "log(";
+char loggers[] = "loggers( \n";
+char swaploggers[] = "log";
 char power[] = "power(\n";
 char swappower[] = "pow(";
 char dontcare[] = "dontCareAboutValue(\n";
 char swapdontcare[] = "round(";
-extern char *josecode[];
-extern char *native[];
+extern char *josecode[15];
+extern char *native[15];
 #endif /* MAIN_H */
 
 

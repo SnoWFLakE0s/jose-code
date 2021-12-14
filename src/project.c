@@ -6,13 +6,13 @@
 /*
  * Global Variable definitions, if needed.
  */
-char *josecode[] = {
-    "",
+char *josecode[15] = {
+    "loggers\n",
+    "line 2"
 };
 
 char *native[] = {
-    "log (",
-    "",
+    "log",
 };
 
 /*

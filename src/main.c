@@ -5,6 +5,9 @@
 
 int main(void){
     printf("Welcome to %s!\n",APP_NAME);
+    printf("*josecode is:%s\n", *josecode);
+    printf("josecode[0] is:%s\n", josecode[0]);
+    printf("josecode[1] is:%s\n", josecode[1]);
 
     //need to add function to wipe any output.c s
     //need to add custom file name support
@@ -34,24 +37,8 @@ int main(void){
             // walk through other tokens 
             while( token != NULL ) {
                 fprintf(op,"%s\n", token);
-
                 token = strtok(NULL, s);
             }
-        /*
-        if( fgets (input, 80, fp)!=NULL ) {
-            int c;
-            const char *s = " "; //token key is a whitespace
-            char *token;
-
-            token = strtok(input, s); //strtok function
-
-            // walk through other tokens 
-            while( token != NULL ) {
-                fprintf(op,"%s\n", token);
-
-                token = strtok(NULL, s);
-            }
-            */
         }
     }
     fclose(op); 
@@ -89,32 +76,33 @@ int main(void){
 
     char *line = NULL;
     size_t len = 0;
-
-    int line_num = 1;
+    char space[] = " ";
+    char endpar[] = ");\n";
+    //int line_num = 1;
     while(getline(&line, &len, op) != -1) {
-        line_num++;
-        /*
-           if((strcmp(boat , line)) == 0) {
-           printf("success at line %d!\n", line_num);
-           printf("line:%d,strcmp value:%d,str:%s,strlen:%d\n",line_num, strcmp(line , boat),line, strlen(line));
-           }
-           */
-        /*giga switch statement
-          if strcmp == 0
-          fprintf(cp, "%s\n", designated array);
-          */
-        if(strcmp(loggers, line) == 0) {
+        if(strcmp("(\n", line) == 0) { //if an open parenthese is detected
+            char str_temp[80] = "( "; //create temporary string
+            while(strcmp(line, ");\n") != 0) { //until close parenthese is detected
+                //printf("input line =%s", line);
+                getline(&line, &len, op); //get a new line
+                strcat( str_temp, line); //concatenate to previous line
+                //printf("temp str=%s", str_temp); //test print - will remove later
+            }
+            for(int i = 0;i < 80; i++) {
+                if(str_temp[i] == '\n') {
+                    str_temp[i] = ' ';
+                }
+            }
+            fprintf(cp, "%s", str_temp); //test print - will remove later
+        }
+        if(strcmp(");\n", line) == 0) {
+            getline(&line, &len, op);
+        }
+        if(strcmp(josecode[0], line) == 0) {
             fprintf(cp, "%s", swaploggers);        
         } else {
             fprintf(cp, "%s", line);
         } 
-        /*
-        if(strcmp(josecode.loggers, line) == 0) {
-            fprintf (cp, "%s", native.loggers);        
-        } else {
-            fprintf(cp, "%s", line);
-        } 
-        */
     }
 
     while(*j != "") {

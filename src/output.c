@@ -15,19 +15,9 @@ value
 
 result
 =
-log(value);
-/*
-printf("The
-Natural
-Logarithm
-of
-%f
-is
-%f\n",
-value,
-result);
-*/
-
+log( value ); 
+printf
+( "The Natural Logarithm of %f is %f\n", value, result ); 
 return 0;
 
 }
