@@ -1,9 +1,5 @@
-# Josecode 
-by First Joshua Eah and Matviy Zhachek 
-for CS 102 Section C Fall 2021
-
 # jose-code
-A simple extension of the C language for doing basic tasks. Funny function names and operators based on quotes from our MA111 professor. Completely impractical.
+A simple extension of the C language for doing basic tasks. Funny function names and operators based on quotes from our MA111 professor. Completely impractical. By Joshua Eah and Matviy Zhachek for CS-102 Section C Fall 2021.
 
 # Language Structure
 Files are saved to `.josecode` files. Code should be individual line-by-line statements, and the compiler will go through one line at a time.
@@ -41,6 +37,24 @@ The only data type in this language are floating-point numbers. This simplifies 
   * `IFF{}{}`: If statements. If statement in first bracket is true, then execute the statement in 2nd bracket. 
   * `IS`: Variable assignment. Syntax: `a IS 5`
   * `RK:` Comments. The compiler will ignore this line for execution.
+
+___
+
+# Writing josecode
+To begin writing josecode, simply create a plain text file with the file extension .josecode. Declare some variables like you would with any other C program:
+```
+int x;
+```
+You can now use them with other josecode functions, like in the program below, which returns the larger of the two numbers. Functions must be used inside the `giveme` function to get any output to the console. It is best practice to declare a `result` variable for your computation and for feeding into the `giveme` function. Proper function syntax is to put single spaces around the parentheses.
+```
+int x = 1;
+int y = 2;
+int result = bigger ( x,y );
+tellme ( "The larger of x and y is %d\n", result );
+```
+Try running the example program above. To run a josecode program, make and run the josecode compiler. Running the compiler will prompt you for the josecode file. By this point, you should have placed your .josecode file inside `/input/`. Now, just type `name_of_file.josecode` when asked for the file, and the josecode compiler will build and run your new program. Congrats! You've just ran a josecode program.
+
+___
 
 ## Technical Description
 
