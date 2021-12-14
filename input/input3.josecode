@@ -1,0 +1,4 @@
+float x_VERY_LARGE = 232423424.324234;
+int result;
+result = dontCareAboutValue ( x_VERY_LARGE );
+tellme ( "%d\n" , result );

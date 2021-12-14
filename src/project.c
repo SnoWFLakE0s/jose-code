@@ -9,12 +9,14 @@
 char *josecode[15] = {
     "loggers\n",
     "power\n",
-    "jazzup\n"
+    "tellme\n",
+    "jazzup\n",
 };
 
 char *native[] = {
     "log",
     "pow",
+    "printf",
     "rand",
     
 };
