@@ -23,7 +23,7 @@ tellme
 (
 "input
 the
-seconf
+second
 number:"
 );
 
