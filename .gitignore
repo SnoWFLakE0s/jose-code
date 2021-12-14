@@ -1,2 +1,3 @@
-
+*.o
+output.c
 .DS_Store
