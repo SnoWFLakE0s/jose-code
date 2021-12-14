@@ -9,15 +9,15 @@ The only data type in this language are floating-point numbers. This simplifies 
 * Functions:
   *  Logarithm: `loggers ( x,a )`
      *  Logarithm of `x` with base `a`.
-  *  Exponential: `power(x,a)`
+  *  Exponential: `power ( x,a )`
      *  `a` to the power of `x`.
   *  Round: `dontCareAboutValue()`
      *  Rounds the input number to the nearest value.
-  *  Maxiumum: `bigger(a,b)`
+  *  Maxiumum: `bigger ( a,b )`
      *  Returns the larger number, `a` or `b`.
-  *  Minimum: `smaller(a,b)`
+  *  Minimum: `smaller ( a,b )`
      *  Returns the smaller number, `a` or `b`.
-  *  Random: `jazzup(a,b)`
+  *  Random: `jazzup ( a,b )`
      *  Returns a random number between `a` and `b`.
 * Math Operators:
   *  Addition Operator: `a PLUS b`
