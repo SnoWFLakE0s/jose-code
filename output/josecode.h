@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-int dontCareAboutValue();
+//int dontCareAboutValue();
 int bigger();
 int smaller();
 
