@@ -1,0 +1,5 @@
+double value;
+double result;
+value = 1.5;
+result = loggers ( value );
+printf ( "The Natural Logarithm of %f is %f\n", value, result );
