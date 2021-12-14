@@ -2,7 +2,7 @@ int x;
 int y;
 tellme ( "input the first number:" );
 giveme ( "%d" , &x );
-tellme ( "input the seconf number:" );
+tellme ( "input the second number:" );
 giveme ( "%d" , &y );
 int result = bigger ( x,y );
 tellme ( "the larger of x and y is %d\n" , result );
