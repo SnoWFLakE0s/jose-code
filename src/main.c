@@ -105,6 +105,8 @@ int main(void){
             fprintf(cp, "%s", native[1]);
         } else if(strcmp(josecode[2], line) == 0) {
             fprintf(cp, "%s", native[2]);
+        } else if(strcmp(josecode[3], line) == 0) {
+            fprintf(cp, "%s", native[3]);
         } else {
             fprintf(cp, "%s", line);
         } 
