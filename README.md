@@ -74,12 +74,17 @@ ___
 
 ## Technical Description
 
-Describe your project's source code in terms of algorithms and data structures.
+Simply put, our program produces a .c file based on some basic .josecode input. A lot of it is effectively a find-and-replace, but certain basics like the c file headers are automatically created which makes writing josecode marginally simpler to write than barebones C.
+
+First, the input file is opened and ran over by a string function to replace josecode function keywords with their equivalent in C.
+
+Then an intermediary output file (.c) is created, which is then ran through GCC in order actually run the josecode program.
 
 ## Screen Shots of Working Program
 
 Add images here like this:
 
+![alt_text](imagedirectory)
 
 ## Link to YouTube video recording of presentation and code walk through.
 
