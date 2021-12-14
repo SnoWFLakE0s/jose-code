@@ -7,7 +7,7 @@ The only data type in this language are floating-point numbers. This simplifies 
 
 # Features
 * Functions:
-  *  Logarithm: `loggers(x,a)`
+  *  Logarithm: `loggers ( x,a )`
      *  Logarithm of `x` with base `a`.
   *  Exponential: `power(x,a)`
      *  `a` to the power of `x`.
@@ -45,7 +45,7 @@ To begin writing josecode, simply create a plain text file with the file extensi
 ```
 int x;
 ```
-You can now use them with other josecode functions, like in the program below, which returns the larger of the two numbers. Functions must be used inside the `giveme` function to get any output to the console. It is best practice to declare a `result` variable for your computation and for feeding into the `giveme` function. Proper function syntax is to put single spaces around the parentheses.
+You can now use them with other josecode functions, like in the program below, which returns the larger of the two numbers. Functions must be used inside the `tellme` function to get any output to the console. It is best practice to declare a `result` variable for your computation and for feeding into the `tellme` function. Proper function syntax is to put single spaces around the parentheses.
 ```
 int x = 1;
 int y = 2;
@@ -54,6 +54,22 @@ tellme ( "The larger of x and y is %d\n", result );
 ```
 Try running the example program above. To run a josecode program, make and run the josecode compiler. Running the compiler will prompt you for the josecode file. By this point, you should have placed your .josecode file inside `/input/`. Now, just type `name_of_file.josecode` when asked for the file, and the josecode compiler will build and run your new program. Congrats! You've just ran a josecode program.
 
+Result:
+```
+>> The larger of x and y is 2
+```
+Here's the more advanced version of this program, which prompts for user input via the `giveme` function. 
+```
+int x;
+int y;
+tellme ( "Input your first number: " );
+giveme ( "&d", &x );
+tellme ( "Input your second number: " );
+giveme ( "&d", &y );
+int result = bigger ( x,y );
+tellme ( "The larger of x and y is %d\n", result );
+```
+Welcome to josecode!
 ___
 
 ## Technical Description
@@ -63,7 +79,7 @@ Describe your project's source code in terms of algorithms and data structures.
 ## Screen Shots of Working Program
 
 Add images here like this:
-![Example image](./images/example.png)
+
 
 ## Link to YouTube video recording of presentation and code walk through.
 
