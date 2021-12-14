@@ -3,13 +3,16 @@
 #include "main.h"
 
 int main(void){
-    printf("Welcome to %s!\n",APP_NAME);
+    char fileName[64];
+    printf("Welcome to the %s compiler!\n",APP_NAME);
+    printf("Please enter the name of your josecode program.");
+    scanf("%s",fileName);
 
     //need to add function to wipe any output.c s
     //need to add custom file name support
 
     FILE *fp; //file pointer to input file
-    fp = fopen("../output/input.josecode","r"); //opens input.josecode to be read
+    fp = fopen(strcat("../output/", fileName),"r"); //opens input.josecode to be read
     if(fp == NULL) { //makes sure the file can be read
         perror("Error opening input file");
         return(-1);
