@@ -99,7 +99,9 @@ int main(void){
             getline(&line, &len, op);
         }
         if(strcmp(josecode[0], line) == 0) {
-            fprintf(cp, "%s", swaploggers);        
+            fprintf(cp, "%s", native[0]);        
+        } else if(strcmp(josecode[1], line) == 0) {
+            fprintf(cp, "%s", native[1]);
         } else {
             fprintf(cp, "%s", line);
         } 

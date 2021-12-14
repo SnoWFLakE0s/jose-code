@@ -22,7 +22,8 @@
 /*
  * Global Variable declarations, if needed.
  */
-
+extern char *josecode[15];
+extern char *native[15];
 /*
  * Data Structure declarations, if needed.
  */
@@ -30,14 +31,9 @@
 /*
  * Function declarations, if needed.
  */
-char loggers[] = "loggers( \n";
-char swaploggers[] = "log";
-char power[] = "power(\n";
-char swappower[] = "pow(";
-char dontcare[] = "dontCareAboutValue(\n";
-char swapdontcare[] = "round(";
-extern char *josecode[15];
-extern char *native[15];
+int dontCareAboutVaue();
+int bigger();
+int smaller();
 #endif /* MAIN_H */
 
 

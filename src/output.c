@@ -4,20 +4,40 @@
 
 int main(void) {
 double
-value;
+value_1;
+
+double
+value_2;
 
 double
 result;
 
-value
+value_1
 =
-1.5;
+2.0;
+
+value_2
+=
+8.0;
+
+
 
 result
 =
-log( value ); 
+log( value_1 ); 
 printf
-( "The Natural Logarithm of %f is %f\n", value, result ); 
+( "Loggers of %f is %f\n", value_1 , result ); 
+
+
+result
+=
+pow( value_1 , value_2 ); 
+printf
+( "Power of %f to the %f is %f\n", value_1 , value_2 , result ); 
+
+
+
+
 return 0;
 
 }
