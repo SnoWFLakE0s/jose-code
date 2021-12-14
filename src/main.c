@@ -1,13 +1,9 @@
-/*
- * main.c
+/* * main.c
  */
 #include "main.h"
 
 int main(void){
     printf("Welcome to %s!\n",APP_NAME);
-    printf("*josecode is:%s\n", *josecode);
-    printf("josecode[0] is:%s\n", josecode[0]);
-    printf("josecode[1] is:%s\n", josecode[1]);
 
     //need to add function to wipe any output.c s
     //need to add custom file name support
@@ -42,6 +38,7 @@ int main(void){
         }
     }
     fclose(op); 
+    printf("intermediary file successfully created\n");
 
     FILE *cp; //file pointer to output c file
     cp = fopen("../output/output.c","w"); //opens the output.c file for writing 
