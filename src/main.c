@@ -1,25 +1,26 @@
-/*
- * main.c
+/* * main.c
  */
 #include "main.h"
 
 int main(void){
-    printf("Welcome to %s!\n",APP_NAME);
-    printf("*josecode is:%s\n", *josecode);
-    printf("josecode[0] is:%s\n", josecode[0]);
-    printf("josecode[1] is:%s\n", josecode[1]);
+    char fileName[80];
+    char inputName[80] = "../input/";
+    printf("Welcome to the %s compiler!\n",APP_NAME);
+    printf("Please enter the name of your josecode program: ");
+    scanf("%s",&fileName[0]);
+    strcat(inputName,fileName);
 
     //need to add function to wipe any output.c s
     //need to add custom file name support
 
     FILE *fp; //file pointer to input file
-    fp = fopen("input.josecode","r"); //opens input.josecode to be read
+    fp = fopen(inputName,"r"); //opens input.josecode to be read
     if(fp == NULL) { //makes sure the file can be read
         perror("Error opening input file");
         return(-1);
     }
     FILE *op; //file pointer to output text file
-    op = fopen("output.txt", "w"); //opens output.txt to be wrote to
+    op = fopen("../output/output.txt", "w"); //opens output.txt to be wrote to
     if(op == NULL) { //makes sure the file can be read
         perror("Error opening output text file");
         return(-1);
@@ -42,22 +43,22 @@ int main(void){
         }
     }
     fclose(op); 
+    printf("intermediary file successfully created\n");
 
     FILE *cp; //file pointer to output c file
-    cp = fopen("output.c","w"); //opens the output.c file for writing 
+    cp = fopen("../output/output.c","w"); //opens the output.c file for writing 
     if(cp == NULL) { //makes sure the file can be read
         perror("Error opening output c file");
         return(-1);
     }
-    op = fopen("output.txt", "r"); //opens output.txt to be read
+    op = fopen("../output/output.txt", "r"); //opens output.txt to be read
     if(op == NULL) { //makes sure the file can be read
         perror("Error opening output text file");
         return(-1);
     }
 
     char *output_start[] = {
-        "#include <stdio.h>",
-        "#include <math.h>",
+        "#include \"josecode.h\"",
         "\n",
         "int main(void) {",
         ""
@@ -102,6 +103,10 @@ int main(void){
             fprintf(cp, "%s", native[0]);        
         } else if(strcmp(josecode[1], line) == 0) {
             fprintf(cp, "%s", native[1]);
+        } else if(strcmp(josecode[2], line) == 0) {
+            fprintf(cp, "%s", native[2]);
+        } else if(strcmp(josecode[3], line) == 0) {
+            fprintf(cp, "%s", native[3]);
         } else {
             fprintf(cp, "%s", line);
         } 
@@ -115,6 +120,8 @@ int main(void){
     fclose(fp);
     fclose(cp);
     free(line);
-
+    printf("Finished Compiling josecode\n");
+    
+    system("cd ../output && make run");
     return(SUCCESS);
 }
