@@ -3,40 +3,15 @@ A simple extension of the C language for doing basic tasks. Funny function names
 
 # Language Structure
 Files are saved to `.josecode` files. Code should be individual line-by-line statements, and the compiler will go through one line at a time.
-The only data type in this language are floating-point numbers. This simplifies calculations a little.
 
 # Features
-* Functions:
-  *  Logarithm: `loggers ( x,a )`
-     *  Logarithm of `x` with base `a`.
-  *  Exponential: `power ( x,a )`
-     *  `a` to the power of `x`.
-  *  Round: `dontCareAboutValue()`
-     *  Rounds the input number to the nearest value.
-  *  Maxiumum: `bigger ( a,b )`
-     *  Returns the larger number, `a` or `b`.
-  *  Minimum: `smaller ( a,b )`
-     *  Returns the smaller number, `a` or `b`.
-  *  Random: `jazzup ( a,b )`
-     *  Returns a random number between `a` and `b`.
-* Math Operators:
-  *  Addition Operator: `a PLUS b`
-     *  Returns `a` plus `b`.
-  *  Subtraction Operator: `a MINUS b`
-     *  Returns `a` minus `b`.
-  *  Multiplication Operator: `a TIMES b`
-     *  Returns `a` times `b`.
-  *  Division Operator: `\frac{a}{b}`
-     *  Reuturns `a` divided by `b`.
-* Logical Operators:
-  * `EQUALTO`: Checks if two numbers are equal. Syntax: `a EQUALTO b`.
-  * `NOT`: Checks if both numbers are not equal. Syntax: `a NOT b`
-  * `OR`: Checks if either of two numbers are larger than 0. Syntax: `a OR b`.
-  * `AND`: Checks if any of two numbers are larger than 0. Syntax: `a AND b`.
-* Some Reserved Words:
-  * `IFF{}{}`: If statements. If statement in first bracket is true, then execute the statement in 2nd bracket. 
-  * `IS`: Variable assignment. Syntax: `a IS 5`
-  * `RK:` Comments. The compiler will ignore this line for execution.
+## Functions
+* `loggers ( a );`: takes the log of base `a`.
+* `power (a, b);`: takes `a` to the power of `b`.
+* `tellme ( );`: takes string, prints string. *tells you something.*
+* `giveme ( );`: takes input from console. *gives the computer something*.
+* `bigger ( a, b );`: returns the bigger of two numbers, `a` or `b`.
+* `smaller ( a, b );`: returns the smaller of two numbers, `a` or `b`. 
 
 ___
 
@@ -45,7 +20,7 @@ To begin writing josecode, simply create a plain text file with the file extensi
 ```
 int x;
 ```
-You can now use them with other josecode functions, like in the program below, which returns the larger of the two numbers. Functions must be used inside the `tellme` function to get any output to the console. It is best practice to declare a `result` variable for your computation and for feeding into the `tellme` function. Proper function syntax is to put single spaces around the parentheses.
+You can now use them with other josecode functions, like in the program below, which returns the larger of the two numbers. Functions must be used inside the `tellme` function to get any output to the console. It is best practice to declare a `result` variable for your computation and for feeding into the `tellme` function. Proper function syntax is to put single spaces around the opening parentheses and a single space preceding the closing parenthese with a semicolon following it.
 ```
 int x = 1;
 int y = 2;
@@ -76,15 +51,25 @@ ___
 
 Simply put, our program produces a .c file based on some basic .josecode input. A lot of it is effectively a find-and-replace, but certain basics like the c file headers are automatically created which makes writing josecode marginally simpler to write than barebones C.
 
-First, the input file is opened and ran over by a string function to replace josecode function keywords with their equivalent in C.
+First, josecode opens your choice of an input file, then an intermediary output file. 
 
-Then an intermediary output file (.c) is created, which is then ran through GCC in order actually run the josecode program.
+It then proceeds scan over the entire input file, character by character, looking for any blankspaces.
+Once it finds a blankspace, it will replace or token it with a NULL character. It then writes each character to the intermediary output file.
+
+Once the intermediary file is created, josecode reopens the file to be read instead of written to, and then opens an accompanying `output.c` file to be written to. The first strings that are written to the `output.c` file are the essential parts of a c file such as the header inclusions and the main function declaration.
+Then the josecode compiler replaces any josecode functions with their C counterparts. 
+Before doing that however, any text detected inside a parenthese is concatenated onto a single line due to string limitations in C.
+Once the josecode is translated and inserted into the `output.c` file, `return 0` and a closing bracket are inputted to satisfy the c compiler.
+
+Once the josecode compiling is over, a system command is run to make and run the `output.c` file.
+Josecode is now executed.
 
 ## Screen Shots of Working Program
 
-Add images here like this:
-
-![alt_text](imagedirectory)
+![josecode input](https://github.com/SnoWFLakE0s/jose-code/blob/main/images/demonstration%20input.PNG?raw=true)
+![josecode intermediary](https://github.com/SnoWFLakE0s/jose-code/blob/main/images/output%20txt.PNG?raw=true)
+![josecode output](https://github.com/SnoWFLakE0s/jose-code/blob/main/images/output%20c.PNG?raw=true)
+![josecode running](https://github.com/SnoWFLakE0s/jose-code/blob/main/images/make%20run.PNG?raw=true)
 
 ## Link to YouTube video recording of presentation and code walk through.
 
