@@ -6,7 +6,7 @@ int main(void){
     char fileName[80];
     char inputName[80] = "../input/";
     printf("Welcome to the %s compiler!\n",APP_NAME);
-    printf("Please enter the name of your josecode program: ");
+    printf("Please enter the name of your josecode program in the input directory: ");
     scanf("%s",&fileName[0]);
     strcat(inputName,fileName);
 
