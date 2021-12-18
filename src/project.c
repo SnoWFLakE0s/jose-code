@@ -29,10 +29,6 @@ char *native[] = {
 /*
  * Function declarations, if needed.
  */
-int dontCareAboutValue(float a) {
-    a = (int)a;
-    return a;
-}
 
 int bigger(int a, int b) {
     if(a>b) {

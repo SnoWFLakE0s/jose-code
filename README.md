@@ -15,7 +15,7 @@ Files are saved to `.josecode` files. Code should be individual line-by-line sta
 
 ___
 
-# Writing josecode
+# 1. Writing josecode
 To begin writing josecode, simply create a plain text file with the file extension .josecode. Declare some variables like you would with any other C program:
 ```
 int x;
@@ -47,7 +47,31 @@ tellme ( "The larger of x and y is %d\n", result );
 Welcome to josecode!
 ___
 
-## Technical Description
+# 2. Compiler Usage Instructions
+___
+Using the josecode compiler is very simple. It is provided as a simple C program, inside the `/src` directory. Navigate to the `/src` directory within your shell, then build and run the program using the command `make run`.
+
+The Makefile will automatically run the josecode compiler program, upon which you should be greeted with this message:
+```
+Welcome to the josecode compiler!
+Please enter the name of your josecode program in the input directory, including the file extension:
+```
+If you now type your input josecode file, which you can easily test out by running any of the four example programs provided, the compiler will interpret and build the josecode program. For example, to run the `example_2.josecode` file, simply type `example_2.josecode` in response to the compiler's prompt:
+```
+>> example_2.josecode
+```
+Upon a successful building of the josecode program, a log will be printed:
+```
+LOG:
+Intermediary file successfully created.
+Beginning C conversion...
+Finished josecode compilation! Me likey. 
+Now running program...
+```
+Now your josecode program should run.
+On instructions to actually *write* josecode, refer to section 1.
+
+# 3. Technical Description
 
 Simply put, our program produces a .c file based on some basic .josecode input. A lot of it is effectively a find-and-replace, but certain basics like the c file headers are automatically created which makes writing josecode marginally simpler to write than barebones C.
 
@@ -64,13 +88,13 @@ Once the josecode is translated and inserted into the `output.c` file, `return 0
 Once the josecode compiling is over, a system command is run to make and run the `output.c` file.
 Josecode is now executed.
 
-## Screen Shots of Working Program
+## Some screenshots of running josecode:
 
 ![josecode input](https://github.com/SnoWFLakE0s/jose-code/blob/main/images/demonstration%20input.PNG?raw=true)
 ![josecode intermediary](https://github.com/SnoWFLakE0s/jose-code/blob/main/images/output%20txt.PNG?raw=true)
 ![josecode output](https://github.com/SnoWFLakE0s/jose-code/blob/main/images/output%20c.PNG?raw=true)
 ![josecode running](https://github.com/SnoWFLakE0s/jose-code/blob/main/images/make%20run.PNG?raw=true)
 
-## Link to YouTube video recording of presentation and code walk through.
-[josecode demonstration](https://youtu.be/jdNY1pUd42k)
+## A YouTube video walkthrough of josecode!
+[Click me to view the walkthrough video with Josh and Matt!](https://youtu.be/jdNY1pUd42k)
 

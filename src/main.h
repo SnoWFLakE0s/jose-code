@@ -31,7 +31,6 @@ extern char *native[15];
 /*
  * Function declarations, if needed.
  */
-int dontCareAboutVaue();
 int bigger();
 int smaller();
 #endif /* MAIN_H */
