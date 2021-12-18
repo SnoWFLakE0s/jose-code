@@ -40,7 +40,10 @@ int bigger(int a, int b) {
     }
     else if(a<b) {
         return b;
-    } //what do we do if they're equal?
+    }
+    else if(a==b) {
+        return a;
+    }
 }
 
 int smaller(int a, int b) {
@@ -49,6 +52,9 @@ int smaller(int a, int b) {
     }
     else if(a<b) {
         return a;
-    } //what do we do if they're equal?
+    } 
+    else if(a==b) {
+        return a;
+    }
 }
 
